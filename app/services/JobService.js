@@ -11,7 +11,7 @@ let _state = {
     })]
 }
 
-export default class CarService {
+export default class JobService {
     constructor() {
         console.log("Hello from JobService!")
         console.log(_state.jobs)

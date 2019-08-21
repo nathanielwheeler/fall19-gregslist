@@ -10,9 +10,9 @@ function _draw() {
     let template = ''
     let jobs = _jobService.Jobs
 
-    // NOTE I don't have to worry about removing old jobs here because that's passed to Car Service
-    jobs.forEach(car => {
-        template += car.Template
+    // NOTE I don't have to worry about removing old jobs here because that's passed to Job Service
+    jobs.forEach(job => {
+        template += job.Template
     })
 
     document.querySelector("#jobs").innerHTML = template
