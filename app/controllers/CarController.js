@@ -32,23 +32,23 @@ export default class CarController {
     _draw()
   }
 
+  //NOTE delete car by id
+  deleteCar(id) {
+    _carService.deleteCar(id)
+    _draw()
+  }
   //NOTE delete car by index
   // deleteCar(index) {
   //   _carService.deleteCar(index)
   //   _draw()
   // }
 
-
-  //NOTE delete car by id
-  deleteCar(id) {
-    _carService.deleteCar(id)
-    _draw()
-  }
-
   addCar(event) {
+    // Gets data from form event
     event.preventDefault()
     let form = event.target
 
+    // Formats data into desired object
     let newCar = {
       make: form.make.value,
       model: form.model.value,
@@ -57,10 +57,9 @@ export default class CarController {
       description: form.description.value,
       price: form.price.value
     }
-
+    // Passes object to Service, then draw()
     _carService.addCar(newCar)
     _draw()
-
   }
 
 }

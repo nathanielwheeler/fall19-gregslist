@@ -7,48 +7,118 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Gregs List</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-dark text-light">
 
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <h1 class="col-12">Make a Car!</h1>
-      <form onsubmit="app.controllers.carController.addCar(event)" class="col-5">
-        <div class="form-group">
-          <label for="make">Make</label>
-          <input type="text" class="form-control" name="make" id="make" placeholder="Type in a make" required>
+      <h1 class="col-12 text-center">Make a Car!</h1>
+      <form onsubmit="app.controllers.carController.addCar(event)">
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="make">Make</label>
+              <input type="text" class="form-control" name="make" id="make" placeholder="Type in a make" required>
+            </div>
+            <div class="form-group">
+              <label for="model">Model</label>
+              <input type="text" class="form-control" name="model" id="model" placeholder="Type in a model" required>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="year">Year</label>
+              <input type="number" min="1890" max="2021" class="form-control" name="year" id="year"
+                placeholder="pick a year" required>
+            </div>
+            <div class="form-group">
+              <label for="imgUrl">Image</label>
+              <input type="text" class="form-control" name="imgUrl" id="imgUrl" placeholder="Type in an image address"
+                required>
+            </div>
+            <button type="submit" class="btn btn-primary">Make Car</button>
+
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" class="form-control" name="description" id="description"
+                placeholder="Type in a description">
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="number" class="form-control" name="price" id="price" placeholder="Type in a price" required>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="model">Model</label>
-          <input type="text" class="form-control" name="model" id="model" placeholder="Type in a model" required>
-        </div>
-        <div class="form-group">
-          <label for="year">Year</label>
-          <input type="number" min="1890" max="2021" class="form-control" name="year" id="year"
-            placeholder="pick a year" required>
-        </div>
-        <div class="form-group">
-          <label for="imgUrl">Image</label>
-          <input type="text" class="form-control" name="imgUrl" id="imgUrl" placeholder="Type in an image address"
-            required>
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <input type="text" class="form-control" name="description" id="description"
-            placeholder="Type in a description" required>
-        </div>
-        <div class="form-group">
-          <label for="price">Price</label>
-          <input type="number" class="form-control" name="price" id="price" placeholder="Type in a price" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Make Car</button>
       </form>
     </div>
-    <div id="cars" class="row">
+    <br>
+    <div id="cars" class="row card-columns justify-content-center">
 
     </div>
   </div>
+
+  <br>
+
+  <div class="container-fluid bg-black">
+
+    <div class="row">
+      <h1 class="col-12 text-center">Make a Job!</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-12 justify-content-center">
+        <form onsubmit="app.controllers.jobController.addJob(event)">
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-4 form-group">
+              <label for="company">Company</label>
+              <input required id="company" placeholder="Schmurgle Inc." name="company" type="text" class="form-control">
+            </div>
+            <div class="col-4 form-group">
+              <label for="position">Position</label>
+              <input required id="position" placeholder="Schmoop Acquisitions Assistant" name="position" type="text"
+                class="form-control">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-4 form-group">
+              <label for="salary">Salary</label>
+              <input required name="salary" id="salary" placeholder="Paid in Vlargle sterling" type="text"
+                class="form-control">
+            </div>
+            <div class="col-4 form-group">
+              <label for="description">Description</label>
+              <input id="job-description" name="description"
+                placeholder="Needs in-depth knowledge of Schnargle mechanics" type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="row d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Make Job</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <br>
+
+    <div id="jobs" class="row card-columns justify-content-center">
+
+    </div>
+  </div>
+
+
+
+
+
+
+
 
   <script src="app/main.js" type="module"></script>
 </body>

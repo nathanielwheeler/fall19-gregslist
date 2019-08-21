@@ -12,6 +12,16 @@ let _state = {
 }
 
 export default class CarService {
+  constructor() {
+    console.log("hello from service")
+    console.log(_state.cars)
+  }
+
+  addCar(newCar) {
+    _state.cars.push(new Car(newCar))
+    console.log(_state.cars)
+  }
+
   //NOTE delete car by id
   deleteCar(id) {
     _state.cars.forEach((car, i) => {
@@ -25,18 +35,6 @@ export default class CarService {
   // deleteCar(index) {
   //   _state.cars.splice(index, 1)
   // }
-
-  addCar(newCar) {
-    _state.cars.push(new Car(newCar))
-    console.log(_state.cars)
-  }
-
-  constructor() {
-    console.log("hello from service")
-    console.log(_state.cars)
-
-  }
-
 
   get Cars() {
     // NOTE car is the current car in the array we are making a new object that is a copy to break reference
